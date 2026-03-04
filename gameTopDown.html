@@ -29,6 +29,7 @@
   <script src="./engine/components/TextLabel.js"></script>
   <script src="./engine/components/Polygon.js"></script>
   <script src="./engine/components/Collider.js"></script>
+  <script src="./engine/components/RigidBody.js"></script>
 
 
 
@@ -61,6 +62,7 @@
       constructor() {
         super("HorizontalWallGameObject")
         this.addComponent(new Polygon(), { points: [new Vector2(-100, -10), new Vector2(100, -10), new Vector2(100, 10), new Vector2(-100, 10)] })
+        this.addComponent(new Collider())
       }
     }
 
@@ -68,6 +70,7 @@
       constructor() {
         super("VerticalWallGameObject")
         this.addComponent(new Polygon(), { points: [new Vector2(-10, -100), new Vector2(10, -100), new Vector2(10, 100), new Vector2(-10, 100)] })
+        this.addComponent(new Collider())
       }
     }
 
@@ -76,6 +79,7 @@
         super("HeroGameObject")
         this.addComponent(new Polygon(), { points: [new Vector2(-10, -10), new Vector2(10, -10), new Vector2(10, 10), new Vector2(-10, 10)], fillStyle: "red" })
         this.addComponent(new Collider())
+        this.addComponent(new RigidBody())
         this.addComponent(new HeroController())
       }
     }
